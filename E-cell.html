@@ -127,7 +127,7 @@
             </div>
             <h3 class="title " id="course-title">
                The E-Cell of LNMIIT is organizing "Shark Tank LNM" event at India's first Web3-based Techno-Management Fest "Plinth," held at LNMIIT </h3>
-            <a href="#" class="inline-btn" onclick="sharkTank()">view Events and Enroll</a>
+            <a href="#" id="btnshark" class="inline-btn" onclick="sharkTank()">view Events and Enroll</a>
          </div>
    
          <div class="box">
@@ -146,7 +146,7 @@
                Presenting you two and a half days of energy, passion and creativity, with a possibility that knows no bounds.
                <br>
             </h3>
-            <a href="#" class="inline-btn" onclick="startUp()">view Events and Enroll</a>
+            <a href="#" id="btnStart" class="inline-btn" onclick="startUp()">view Events and Enroll</a>
          </div>
 
 
@@ -196,6 +196,47 @@
    var nameshow = sessionStorage.getItem("nameshow");
    document.getElementById("hello").textContent = nameshow;
    document.getElementById("hello1").textContent = nameshow;
+   var userame = sessionStorage.getItem("user");
+   var dataToCheck = userame;
+
+   function checkshark() {
+   const dataRef = database.ref("events/"+ "Shark Tank LNM" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnshark').innerHTML = 'Already Registered';
+         document.getElementById('btnshark').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ function checkStartUp() {
+   const dataRef = database.ref("events/"+ "StartUp Weekend" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnStart').innerHTML = 'Already Registered';
+         document.getElementById('btnStart').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ checkStartUp();
+ checkshark();
 </script>
 
    

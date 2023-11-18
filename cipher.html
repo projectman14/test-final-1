@@ -98,7 +98,7 @@
             </div>
             <h3 class="title " id="course-title">
                Have you heard about Bitcoin???? I guess yess 😏. Have you heard about JPEG selling for millions???? That's also yess .But do you know what they are? </h3>
-            <a href="#" class="inline-btn" onclick="polygon()">view Events and Enroll</a>
+            <a href="#" id="btnpoly" class="inline-btn" onclick="polygon()">view Events and Enroll</a>
          </div>
    
          <div class="box">
@@ -118,7 +118,7 @@
                <br>
                <br>
             </h3>
-            <a href="#" class="inline-btn" onclick="web3Talks()">view Events and Enroll</a>
+            <a href="#" id="btnTalk" class="inline-btn" onclick="web3Talks()">view Events and Enroll</a>
          </div>
 
 
@@ -168,6 +168,47 @@
    var nameshow = sessionStorage.getItem("nameshow");
    document.getElementById("hello").textContent = nameshow;
    document.getElementById("hello1").textContent = nameshow;
+   var userame = sessionStorage.getItem("user");
+   var dataToCheck = userame;
+
+   function checkpolygon() {
+   const dataRef = database.ref("events/"+ "polygon Guide" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnpoly').innerHTML = 'Already Registered';
+         document.getElementById('btnpoly').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ function checkTalk() {
+   const dataRef = database.ref("events/"+ "Web3 Talk" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnTalk').innerHTML = 'Already Registered';
+         document.getElementById('btnTalk').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ checkTalk();
+ checkpolygon();
 </script>
 
    

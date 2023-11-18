@@ -128,7 +128,7 @@
             <h3 class="title " id="course-title">
                That it was time put on a show with the same classic theatrical touch we are known for.. So hold on to your seats as rendition presents to you ODEUM!!!
             </h3>
-            <a href="#" class="inline-btn" onclick="odeum()">view Events and Enroll</a>
+            <a href="#" id="btnodeum" class="inline-btn" onclick="odeum()">view Events and Enroll</a>
          </div>
    
          <div class="box">
@@ -178,6 +178,28 @@
    var nameshow = sessionStorage.getItem("nameshow");
    document.getElementById("hello").textContent = nameshow;
    document.getElementById("hello1").textContent = nameshow;
+   var userame = sessionStorage.getItem("user");
+   var dataToCheck = userame;
+
+   function checkOdeum() {
+   const dataRef = database.ref("events/"+ "Odeum" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnodeum').innerHTML = 'Already Registered';
+         document.getElementById('btnodeum').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ checkOdeum();
 </script>
 
    

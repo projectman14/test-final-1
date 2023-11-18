@@ -100,7 +100,7 @@
             </div>
             <h3 class="title " id="course-title">
                Everyone has that one hidden skill, that one heartbreaking Shayari waiting to be heard, that one comedian ready to sprint on the stage. </h3>
-            <a href="#" class="inline-btn" onclick="registerSpotlight()">view Events and Enroll</a>
+            <a href="#" id="btnSpot" class="inline-btn" onclick="registerSpotlight()">view Events and Enroll</a>
          </div>
    
          <div class="box">
@@ -118,7 +118,7 @@
             <h3 class="title " id="course-title">Nothing compares to a beautiful dialogue with a beautiful soul. Each one of us here has a story to tell; a story that defines us and narrates some precious moments of our lives.
                <br>
             </h3>
-            <a href="#" class="inline-btn" onclick="registerDuolouge()">view Events and Enroll</a>
+            <a href="#" id="btnduo" class="inline-btn" onclick="registerDuolouge()">view Events and Enroll</a>
          </div>
 
          <div class="box">
@@ -168,6 +168,47 @@
    var nameshow = sessionStorage.getItem("nameshow");
    document.getElementById("hello").textContent = nameshow;
    document.getElementById("hello1").textContent = nameshow;
+   var userame = sessionStorage.getItem("user");
+   var dataToCheck = userame;
+
+   function checkDuo() {   
+   const dataRef = database.ref("events/"+ "Duolouge" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnduo').innerHTML = 'Already Registered';
+         document.getElementById('btnduo').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ function checkspotlight() {
+   const dataRef = database.ref("events/"+ "spotlight" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         document.getElementById('btnSpot').innerHTML = 'Already Registered';
+         document.getElementById('btnSpot').onclick = null;
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+ checkDuo();
+ checkspotlight();
 </script>
 
    

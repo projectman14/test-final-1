@@ -211,9 +211,9 @@ function get() {
       .then(function (snapshot) {
          name1 = snapshot.child("name").val(); // {first:"Ada",last:"Lovelace"}
          alert(name1);
-
+         var passuser = username;
+         sessionStorage.setItem("user", username);
          var passdata = name1;
-
          sessionStorage.setItem("nameshow", passdata);
          
          
@@ -403,6 +403,37 @@ function startUp() {
       username: username,
    })   
 }
+
+
+
+function checkDataExistence() {
+   var username = document.getElementById('lusername').value;
+   var dataToCheck = document.getElementById('lusername').value;
+   const dataRef = database.ref("users" );
+   dataRef.once("value")
+     .then((snapshot) => {
+       // Check if the data exists
+       if (snapshot.val() && snapshot.val().hasOwnProperty(dataToCheck)) {
+         console.log(`Data "${dataToCheck}" exists in the database.`);
+         get();
+         SignIn();
+       } else {
+         console.log(`Data "${dataToCheck}" does not exist in the database.`);
+         alert('Invalid Username');
+       }
+     })
+     .catch((error) => {
+       console.error("Error reading data:", error);
+     });
+ }
+
+
+ 
+
+
+
+
+
 
 
 
