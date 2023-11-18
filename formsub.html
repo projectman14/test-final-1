@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>video playlist</title>
+   <title>update</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -76,58 +76,20 @@
 
 </div>
 
-<section class="playlist-details">
+<section class="form-container">
+
+   <div class="form">
+      <h3>Register In Event</h3>
+      <p>Username</p>
+      <input type="text" name="username" placeholder="Username" maxlength="50" id="rguser" class="box">
+      <p>Enter The Event Code</p>
+      <input type="text" name="eventcode" placeholder="eventcode" maxlength="50" id="rgcode" class="box">
+      <input type="submit" value="Register In Event" name="submit" class="btn" onclick="registerEvent()" >
+   <div>
 
    
 
-   <section class="courses">
-
-      
-   
-      <div class="box-container">
-   
-         <div class="box">
-            <div class="tutor">
-               <img src="images/media-cell.jpg" alt="">
-               <div class="info">
-                  <h3>Media Cell</h3>
-                  <!-- <span>21-10-2022</span> -->
-               </div>
-            </div>
-            <div class="thumb">
-               <img src="images/media-cell-event.jpg" alt="">
-               <!-- <span>10 videos</span> -->
-            </div>
-            <h3 class="title " id="course-title">
-               Improving your speaking skills involves regular practice, focusing on clear pronunciation, using a varied vocabulary, and honing your ability to convey ideas effectively, all of which will boost your confidence.</h3>
-            <a href="media-cell.html" class="inline-btn">view Events and Enroll</a>
-         </div>
-   
-         <div class="box">
-            <div class="tutor">
-               <img src="images/l-comm.jpg" alt="">
-               <div class="info">
-                  <h3>Literary Committie</h3>
-                  <!-- <span>21-10-2022</span> -->
-               </div>
-            </div>
-            <div class="thumb">
-               <img src="images/litrary-com.png" alt="">
-               <!-- <span>10 videos</span> -->
-            </div>
-            <h3 class="title " id="course-title">Participating in sports not only promotes physical fitness but also builds teamwork, discipline, and resilience, fostering a well-rounded and healthy lifestyle.
-               <br>
-            </h3>
-            <a href="lit-comm.html" class="inline-btn">view Events and Enroll</a>
-         </div>
-   
-         
-        
-   
-      </div>
-   
-   </section>
-   
+  
 
 </section>
 
@@ -143,7 +105,13 @@
 
 
 
-<!-- custom js file link  -->
+
+
+
+
+
+
+
 <script src="js/script.js"></script>
 <script>
    var nameshow = sessionStorage.getItem("nameshow");

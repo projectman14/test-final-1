@@ -269,6 +269,140 @@ function sendEmail() {
    .catch();
 }
 
+function registerSpotlight () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'spotlight/' + username ).set({
+      username: username,
+   })   
+}
+
+function registerDuolouge () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Duolouge/' + username ).set({
+      username: username,
+   })   
+}
+
+function inkiit () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Inkiit/' + username ).set({
+      username: username,
+   })   
+}
+
+function cricketInterYear () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Cricket/' + username ).set({
+      username: username,
+   })   
+}
+
+function BasketballInterYear () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'basketball/' + username ).set({
+      username: username,
+   })   
+}
+
+function polygon () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'polygon Guide/' + username ).set({
+      username: username,
+   })   
+}
+
+function web3Talks () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Web3 Talk/' + username ).set({
+      username: username,
+   })   
+}
+
+function Dules () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Dules/' + username ).set({
+      username: username,
+   })   
+}
+
+function Enigma () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Enigma/' + username ).set({
+      username: username,
+   })   
+}
+
+function avegGrp () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Aaveg/' + username ).set({
+      username: username,
+   })   
+}
+
+function odeum () {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Odeum/' + username ).set({
+      username: username,
+   })   
+}
+
+function throughTheLens() {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Through The Lenses/' + username ).set({
+      username: username,
+   })   
+}
+
+function photoWorkshop() {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Photography Workshop/' + username ).set({
+      username: username,
+   })   
+}
+
+function sharkTank() {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'Shark Tank LNM/' + username ).set({
+      username: username,
+   })   
+}
+
+function startUp() {
+
+   let username = prompt('Enter Your Username To Conform');
+
+   database.ref('events/' + 'StartUp Weekend/' + username ).set({
+      username: username,
+   })   
+}
 
 
 
