@@ -12,17 +12,15 @@ let date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
-// import { getDatabase , ref , set  } from "firebase/database";
-// const database = getDatabase();
 const firebaseApp = firebase.initializeApp({
-   apiKey: "AIzaSyCHjgnRPQqr2czcLvQ6OFAQvy6AaQfbggI",
-   authDomain: "ecap-b6bd3.firebaseapp.com",
-   databaseURL: "https://ecap-b6bd3-default-rtdb.firebaseio.com",
-   projectId: "ecap-b6bd3",
-   storageBucket: "ecap-b6bd3.appspot.com",
-   messagingSenderId: "822964620757",
-   appId: "1:822964620757:web:911b5445e9c6819f15415c",
-   measurementId: "G-9P6N39KQ6Q"
+   apiKey: "AIzaSyBh8s3VMK0Yk3LKZMcz1Ga5t-7-cfg4EoE",
+   authDomain: "ecap-31553.firebaseapp.com",
+   projectId: "ecap-31553",
+   storageBucket: "ecap-31553.appspot.com",
+   messagingSenderId: "748285011242",
+   appId: "1:748285011242:web:77ecf3c9d985858f0eaa53",
+   measurementId: "G-Q303728H9W",
+   databaseURL: "https://ecap-31553-default-rtdb.firebaseio.com"
 });
 const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
@@ -91,30 +89,6 @@ window.onscroll = () => {
    }
 }
 
-// function checkusername() {
-//    var DesireUsername = document.getElementById("username").value;
-//    const dbRef = firebase.database().ref();
-//    const usernameToCheck = "lakshyajain_14"; // Replace with the username you want to check
-
-//    dbRef.child("users").orderByChild("username").equalTo(DesireUsername).get().then((snapshot) => {
-//       if (snapshot.exists()) {
-//          console.log("Username is taken.");
-//       } else {
-//          console.log("Username is available.");
-//       }
-//    }).catch((error) => {
-//       console.error(error);
-//    });
-
-// }
-
-
-// todaydate.innerHTML = day +"-"+ month +"-"+ year;
-// todaydate1.innerHTML = day +"-"+ month +"-"+ year;
-// todaydate2.innerHTML = day +"-"+ month +"-"+ year;
-// todaydate3.innerHTML = day +"-"+ month +"-"+ year;
-// todaydate4.innerHTML = day +"-"+ month +"-"+ year;
-// todaydate5.innerHTML = day +"-"+ month +"-"+ year;
 
 const SignUp = () => {
    const email = document.getElementById("email").value;
@@ -260,7 +234,7 @@ function sendEmail() {
    };
 
    var serviceID = "service_1ikqpgz";
-   var templateID = "template_7sulgy6";
+   var templateID = "tesendemailmplate_7sulgy6";
 
    emailjs.send(serviceID , templateID , params)
    .then( res=> {
@@ -275,7 +249,8 @@ function registerSpotlight () {
 
    database.ref('events/' + 'spotlight/' + username ).set({
       username: username,
-   })   
+   }) 
+   location.reload(); 
 }
 
 function registerDuolouge () {
@@ -285,6 +260,7 @@ function registerDuolouge () {
    database.ref('events/' + 'Duolouge/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function inkiit () {
@@ -294,6 +270,7 @@ function inkiit () {
    database.ref('events/' + 'Inkiit/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function cricketInterYear () {
@@ -302,7 +279,8 @@ function cricketInterYear () {
 
    database.ref('events/' + 'Cricket/' + username ).set({
       username: username,
-   })   
+   })
+   location.reload();    
 }
 
 function BasketballInterYear () {
@@ -311,7 +289,8 @@ function BasketballInterYear () {
 
    database.ref('events/' + 'basketball/' + username ).set({
       username: username,
-   })   
+   })  
+   location.reload();  
 }
 
 function polygon () {
@@ -321,6 +300,7 @@ function polygon () {
    database.ref('events/' + 'polygon Guide/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function web3Talks () {
@@ -329,7 +309,8 @@ function web3Talks () {
 
    database.ref('events/' + 'Web3 Talk/' + username ).set({
       username: username,
-   })   
+   })  
+   location.reload();  
 }
 
 function Dules () {
@@ -339,6 +320,7 @@ function Dules () {
    database.ref('events/' + 'Dules/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function Enigma () {
@@ -348,6 +330,7 @@ function Enigma () {
    database.ref('events/' + 'Enigma/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function avegGrp () {
@@ -356,7 +339,8 @@ function avegGrp () {
 
    database.ref('events/' + 'Aaveg/' + username ).set({
       username: username,
-   })   
+   }) 
+   location.reload();   
 }
 
 function odeum () {
@@ -365,7 +349,8 @@ function odeum () {
 
    database.ref('events/' + 'Odeum/' + username ).set({
       username: username,
-   })   
+   }) 
+   location.reload();   
 }
 
 function throughTheLens() {
@@ -375,6 +360,7 @@ function throughTheLens() {
    database.ref('events/' + 'Through The Lenses/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function photoWorkshop() {
@@ -384,6 +370,7 @@ function photoWorkshop() {
    database.ref('events/' + 'Photography Workshop/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function sharkTank() {
@@ -393,6 +380,7 @@ function sharkTank() {
    database.ref('events/' + 'Shark Tank LNM/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 function startUp() {
@@ -402,6 +390,7 @@ function startUp() {
    database.ref('events/' + 'StartUp Weekend/' + username ).set({
       username: username,
    })   
+   location.reload(); 
 }
 
 
@@ -426,6 +415,8 @@ function checkDataExistence() {
        console.error("Error reading data:", error);
      });
  }
+
+
 
 
  
