@@ -158,8 +158,6 @@ document.getElementById("p-log").onclick = function () {
    window.location.assign("login.html");
 }
 
-// let p = document.getElementById("lemail").value; 
-
 function save() {
    var email = document.getElementById("email").value;
    var password = document.getElementById("password").value;
@@ -234,7 +232,7 @@ function sendEmail() {
    };
 
    var serviceID = "service_1ikqpgz";
-   var templateID = "tesendemailmplate_7sulgy6";
+   var templateID = "template_7sulgy6";
 
    emailjs.send(serviceID , templateID , params)
    .then( res=> {
